@@ -1,1302 +1,250 @@
-<html lang="en" class="light"><head><script data-bard-client-injected="true">(function(firebaseConfig, initialAuthToken, appId) {
-        window.__firebase_config = firebaseConfig;
-        window.__initial_auth_token = initialAuthToken;
-        window.__app_id = appId;
-            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExNjRiNzdiNDMzZDdhMDAyMWI4NjE4YjhjYTU3ZTMyZGI5MWUxMTMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxODI5OTYzMjMxMzA5NzY4NTI0MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzIwMzgwZTAyNjk5YzNiZTJfaW5kZXguaHRtbC0xOSJ9LCJleHAiOjE3OTM5NDcxOTIsImlhdCI6MTc5Mzk0MzU5MiwiYWxnIjoiUlMyNTYifQ.Pulo5WApoVQ97geVUHpU08PALXKvKlm65fxetcTqglwaC20X2v_HF_HAV-RznLlXPQBreYnxOHHJFsdS_ZiOcvfILHbMMLL0rZefuulTfIHbYvJ-pj2fLlirVdI-Ur6IKBHtQKUtuKJtza_BSrzTheRDNdmogzler2pEeUXaftpJcOGH1uU7lXqJsEG1dRmU8sfxp9w_n2vki1T0ueB6hGSjyRP1yA7366VG7otp-PB7Hbs_w-10gC_PWkY3sd_CcfSc-dU6DmZwMlsjWBDQPzYgdJRheEih63A39XWUZ8xPlNgjreX2WxXAH6aCrnvawiEHJAFDFpxycPhnMBFPzQ","c_20380e02699c3be2_index.html-19")</script><script data-bard-client-injected="true">
-  document.addEventListener('input', (event) => {
-    if (event.target && (event.target.isContentEditable || event.target.hasAttribute('contenteditable'))) {
-      const clonedDoc = document.cloneNode(true);
-      const injectedScripts = clonedDoc.querySelectorAll('[data-bard-client-injected="true"]');
-      injectedScripts.forEach(el => el.remove());
-      window.parent.postMessage({
-        type: 'inlineEdit',
-        html: '<!DOCTYPE html>\n' + clonedDoc.documentElement.outerHTML
-      }, '*');
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>MediaFetch.Pro — Download Reels & Videos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: {
+      colors: { brand: '#1689dc', ink: '#142033' },
+      boxShadow: { soft: '0 12px 40px rgba(15, 35, 60, .07)' }
+    }}};
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .focus-ring:focus { outline: 3px solid rgba(22,137,220,.2); border-color:#1689dc; }
+    .platform.active { border-color:#1689dc; background:rgba(22,137,220,.07); color:#1689dc; }
+    .dark .platform.active { background:rgba(22,137,220,.14); }
+    .modal-backdrop { background:rgba(7,16,29,.58); backdrop-filter:blur(4px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0d1522] dark:text-slate-100 min-h-screen flex flex-col">
+  <header class="bg-white/95 dark:bg-[#111d2c]/95 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[76px] flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-2.5" aria-label="MediaFetch Pro home">
+        <span class="w-10 h-10 rounded-xl bg-brand text-white grid place-items-center shadow-sm">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 17v3h14v-3"/></svg>
+        </span>
+        <span class="text-xl font-extrabold tracking-tight">MediaFetch<span class="text-brand">.Pro</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#downloader" class="hover:text-brand">Downloader</a>
+        <a href="#how-it-works" class="hover:text-brand">How it works</a>
+        <a href="#faq" class="hover:text-brand">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="h-10 w-10 rounded-xl border border-slate-200 dark:border-slate-700 grid place-items-center hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
+        <a href="#downloader" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-bold text-white hover:bg-sky-700">Start Download <span>↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section id="downloader" class="max-w-7xl mx-auto px-5 lg:px-8 pt-14 md:pt-20 pb-16">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 rounded-full border border-sky-200 dark:border-sky-900 bg-sky-50 dark:bg-sky-950/50 px-3.5 py-1.5 text-xs font-bold text-sky-700 dark:text-sky-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Simple · Fast · Easy to use
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.08] text-slate-950 dark:text-white">
+          Download Reels &amp; Videos<br><span class="text-brand">Instantly</span>
+        </h1>
+        <p class="mt-5 text-base md:text-lg leading-8 text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+          Save publicly available videos from supported platforms with a simple link. Paste a URL below to get started.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto mt-10 grid lg:grid-cols-[1.35fr_.85fr] gap-5 items-stretch">
+        <div class="bg-white dark:bg-[#142235] border border-slate-200 dark:border-slate-700 rounded-3xl p-5 sm:p-7 shadow-soft">
+          <div class="flex items-center justify-between gap-3 mb-5">
+            <div>
+              <h2 class="font-extrabold text-lg">Paste video link</h2>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Add a public video URL below</p>
+            </div>
+            <span class="text-xs font-bold text-slate-400 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5">STEP 01</span>
+          </div>
+          <label for="videoUrl" class="sr-only">Video URL</label>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input id="videoUrl" type="url" placeholder="https://www.instagram.com/reel/..." class="focus-ring min-w-0 flex-1 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-[#0d1928] px-4 py-4 text-sm outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500" autocomplete="url">
+            <button id="pasteBtn" class="rounded-xl border border-slate-300 dark:border-slate-600 px-5 py-3.5 text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800">Paste link</button>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+            <span class="text-xs text-slate-500 dark:text-slate-400">Choose a platform</span>
+            <span id="detectedLabel" class="text-xs font-semibold text-slate-400">No platform detected</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3" id="platforms">
+            <button class="platform active rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm font-bold flex items-center justify-center gap-2" data-platform="Instagram"><span class="text-pink-500">◎</span> Instagram</button>
+            <button class="platform rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm font-bold flex items-center justify-center gap-2" data-platform="TikTok"><span>♪</span> TikTok</button>
+            <button class="platform rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm font-bold flex items-center justify-center gap-2" data-platform="YouTube"><span class="text-red-500">▶</span> YouTube</button>
+            <button class="platform rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm font-bold flex items-center justify-center gap-2" data-platform="Facebook"><span class="text-blue-600">f</span> Facebook</button>
+          </div>
+          <button id="fetchBtn" class="mt-6 w-full rounded-xl bg-brand hover:bg-sky-700 text-white font-extrabold py-4 px-5 flex items-center justify-center gap-2 shadow-sm">
+            Prepare Download <span aria-hidden="true">→</span>
+          </button>
+          <p id="status" role="status" aria-live="polite" class="hidden mt-4 rounded-xl p-3 text-sm"></p>
+          <p class="mt-4 text-center text-xs leading-5 text-slate-400">Only use links to content you own or have permission to download. Private or restricted content is not supported.</p>
+        </div>
+
+        <aside class="bg-white dark:bg-[#142235] border border-slate-200 dark:border-slate-700 rounded-3xl p-5 sm:p-7 shadow-soft flex flex-col">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="font-extrabold text-lg">Media preview</h2>
+            <span class="text-xs font-bold text-slate-400 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5">STEP 02</span>
+          </div>
+          <div class="flex-1 min-h-[220px] mt-5 rounded-2xl border-2 border-dashed border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-[#0d1928] flex flex-col items-center justify-center text-center p-6">
+            <div class="w-14 h-14 rounded-2xl bg-sky-100 dark:bg-sky-950 text-brand grid place-items-center mb-4">
+              <svg viewBox="0 0 24 24" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>
+            </div>
+            <p class="font-bold">Your preview will appear here</p>
+            <p class="text-sm text-slate-400 mt-2 max-w-[230px]">Paste a supported public video link to begin.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+            <span class="text-emerald-500 text-base">●</span> No account sign-in required for this interface
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="bg-white dark:bg-[#111d2c] border-y border-slate-200 dark:border-slate-800 py-16">
+      <div class="max-w-6xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-10">
+          <p class="text-brand text-xs font-extrabold tracking-[.18em] uppercase">Quick and simple</p>
+          <h2 class="text-3xl font-black mt-3">How it works</h2>
+          <p class="text-slate-500 dark:text-slate-400 mt-3">Three simple steps to get started.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6"><span class="text-brand font-black text-sm">01</span><h3 class="font-extrabold text-lg mt-3">Copy the link</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-6">Copy the URL of a public video from a supported platform.</p></article>
+          <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6"><span class="text-brand font-black text-sm">02</span><h3 class="font-extrabold text-lg mt-3">Paste it here</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-6">Paste the link into the input field and select its platform.</p></article>
+          <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6"><span class="text-brand font-black text-sm">03</span><h3 class="font-extrabold text-lg mt-3">Connect a downloader</h3><p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-6">A secure server integration is needed to retrieve and deliver media.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="max-w-4xl mx-auto px-5 py-16">
+      <div class="text-center mb-8"><h2 class="text-3xl font-black">Frequently asked questions</h2><p class="text-slate-500 dark:text-slate-400 mt-3">A few things to know before using the tool.</p></div>
+      <div class="space-y-3">
+        <details class="group border border-slate-200 dark:border-slate-700 rounded-xl p-5"><summary class="font-bold cursor-pointer list-none flex justify-between">Can I download private videos?<span class="text-brand">＋</span></summary><p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-6">No. This tool is intended only for publicly accessible content that you have permission to save.</p></details>
+        <details class="group border border-slate-200 dark:border-slate-700 rounded-xl p-5"><summary class="font-bold cursor-pointer list-none flex justify-between">Why is a backend required?<span class="text-brand">＋</span></summary><p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-6">A browser-only page cannot reliably retrieve media from third-party platforms because of platform restrictions and browser security rules. A compliant server-side integration is required.</p></details>
+        <details class="group border border-slate-200 dark:border-slate-700 rounded-xl p-5"><summary class="font-bold cursor-pointer list-none flex justify-between">Does this page store my links?<span class="text-brand">＋</span></summary><p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-6">This frontend does not send or store your links. A future backend should clearly disclose any data it processes.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white dark:bg-[#111d2c] border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+      <div class="flex items-center gap-2 font-extrabold"> <span class="w-8 h-8 rounded-lg bg-brand text-white grid place-items-center">↓</span> MediaFetch<span class="text-brand">.Pro</span></div>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500 dark:text-slate-400">
+        <button class="footer-modal hover:text-brand" data-modal="about">About Us</button>
+        <button class="footer-modal hover:text-brand" data-modal="privacy">Privacy Policy</button>
+        <button class="footer-modal hover:text-brand" data-modal="terms">Terms of Use</button>
+      </div>
+      <p class="text-xs text-slate-400">© <span id="year"></span> MediaFetch.Pro</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="hidden fixed inset-0 z-50 modal-backdrop items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="w-full max-w-lg rounded-2xl bg-white dark:bg-[#142235] border border-slate-200 dark:border-slate-700 shadow-2xl p-6">
+      <div class="flex justify-between items-center gap-4"><h2 id="modalTitle" class="text-xl font-black"></h2><button id="closeModal" class="w-9 h-9 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xl" aria-label="Close modal">×</button></div>
+      <div id="modalBody" class="text-sm leading-7 text-slate-600 dark:text-slate-300 mt-4"></div>
+      <div class="mt-6 text-right"><button id="modalDone" class="rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white">Close</button></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (selector) => document.querySelector(selector);
+    const urlInput = $('#videoUrl');
+    const statusBox = $('#status');
+    let selectedPlatform = 'Instagram';
+
+    // Theme preference
+    const savedTheme = localStorage.getItem('mediafetch-theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      $('#themeIcon').innerHTML = '<path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>';
     }
-  });
-</script><script data-bard-client-injected="true">(function(){'use strict';window.addEventListener("message",a=>{a.data&&a.data.type==="SUPPLEMENTAL_DATA_UPDATE"&&window.dispatchEvent(new CustomEvent("supplementaldataupdate",{detail:a.data.data}))});}).call(this);
-</script><script data-bard-client-injected="true">(function() {
-  const SCROLL_KEYS = new Set([
-    'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
-    ' ', 'Spacebar', 'PageUp', 'PageDown', 'Home', 'End',
-  ]);
-  const HORIZONTAL_KEYS = new Set(['ArrowLeft', 'ArrowRight']);
-
-  function isTextEntryTarget(target) {
-    if (!target) return false;
-    const tagName = target.tagName;
-    return tagName === 'INPUT' || tagName === 'TEXTAREA' ||
-        tagName === 'SELECT' || target.isContentEditable === true;
-  }
-
-  // An element absorbs the key only if it both overflows on the axis being
-  // scrolled and is configured to scroll on that axis. The cheap dimension
-  // test runs first because getComputedStyle forces a style recalc, and this
-  // runs on every keypress. Each axis is read from its own longhand: the
-  // 'overflow' shorthand serializes as two values when the axes differ, which
-  // is the common 'overflow-x: hidden; overflow-y: auto' pane.
-  function canScroll(node, horizontal) {
-    const overflows = horizontal ? node.scrollWidth > node.clientWidth
-                                 : node.scrollHeight > node.clientHeight;
-    if (!overflows) return false;
-    const style = window.getComputedStyle(node);
-    const overflow = horizontal ? style.overflowX : style.overflowY;
-    return overflow === 'auto' || overflow === 'scroll';
-  }
-
-  // Walks up from the event target so nested scrollers keep their behavior.
-  // <body> is included because pages that pin the root height make it the
-  // scroll container.
-  function hasScrollableAncestor(target, horizontal) {
-    let node = target;
-    while (node && node !== document.documentElement) {
-      if (canScroll(node, horizontal)) return true;
-      node = node.parentElement;
-    }
-    return false;
-  }
-
-  function rootCanScroll(horizontal) {
-    const scroller = document.scrollingElement || document.documentElement;
-    if (!scroller) return false;
-    // Tolerate a pixel of rounding so subpixel layouts do not look scrollable.
-    return horizontal ? scroller.scrollWidth > window.innerWidth + 1
-                      : scroller.scrollHeight > window.innerHeight + 1;
-  }
-
-  window.addEventListener('keydown', function(event) {
-    if (!SCROLL_KEYS.has(event.key)) return;
-    if (event.defaultPrevented) return;
-    // Alt and Meta turn arrows into browser history navigation, and Ctrl is
-    // reserved for shortcuts, so none of them are scroll intent.
-    if (event.altKey || event.metaKey || event.ctrlKey) return;
-
-    const target = event.target;
-    if (isTextEntryTarget(target)) return;
-
-    // Anything that can still absorb the scroll gets to keep it.
-    const horizontal = HORIZONTAL_KEYS.has(event.key);
-    if (rootCanScroll(horizontal)) return;
-    if (hasScrollableAncestor(target, horizontal)) return;
-
-    event.preventDefault();
-  }, {capture: true, passive: false});
-})();</script><script data-bard-client-injected="true">(function() {
-  // Ensure this script is executed only once
-  if (window.firebaseAuthBridgeScriptLoaded) {
-    return;
-  }
-  window.firebaseAuthBridgeScriptLoaded = true;
-
-  let nextTokenPromiseId = 0;
-
-  // Stores { resolve, reject } for ongoing token requests
-  const pendingTokenPromises = {};
-
-  // Listen for messages from the Host Application
-  window.addEventListener('message', function(event) {
-
-    const messageData = event.data;
-
-  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
-      const { success, token, error, promiseId } = messageData ?? {};
-      if (pendingTokenPromises[promiseId]) {
-        if (success) {
-          pendingTokenPromises[promiseId].resolve(token);
-        } else {
-          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
-        }
-        delete pendingTokenPromises[promiseId];
-      }
-    }
-  });
-
-  // Expose a function for the Generated App to request a new Firebase token
-  window.requestNewFirebaseToken = function() {
-    const currentPromiseId = nextTokenPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    $('#themeToggle').addEventListener('click', () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('mediafetch-theme', dark ? 'dark' : 'light');
+      $('#themeIcon').innerHTML = dark
+        ? '<path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>'
+        : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
     });
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({
-        type: 'REQUEST_NEW_FIREBASE_TOKEN',
-        promiseId: currentPromiseId
-      }, '*');
-    } else {
-      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
-      delete pendingTokenPromises[currentPromiseId];
+
+    function showStatus(message, type = 'info') {
+      statusBox.textContent = message;
+      statusBox.className = 'mt-4 rounded-xl p-3 text-sm ' + (type === 'error'
+        ? 'bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300'
+        : 'bg-sky-50 text-sky-800 dark:bg-sky-950/50 dark:text-sky-200');
     }
-    return promise;
-  };
-})();</script><script data-bard-client-injected="true">
-let realOriginalGetUserMedia = null;
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
-}
-
-(function() {
-  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
-    try {
-      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
-        get: function() {
-          return undefined; // Or throw an error
-        },
-        configurable: false
-      });
-    } catch (error) {
-      console.error("Error defining prototype getter:", error);
-    }
-  }
-})();
-
-(function() {
-  const pendingMediaResolvers = {};
-  let nextMediaPromiseId = 0;
-
-  function requestMediaPermissions(constraints) {
-    const mediaPromiseId = nextMediaPromiseId++;
-    const promise = new Promise((resolve, reject) => {
-      pendingMediaResolvers[mediaPromiseId] = (granted) => {
-        delete pendingMediaResolvers[mediaPromiseId];
-        resolve(granted);
-      };
-    });
-
-    window.parent.postMessage({
-      type: 'requestMediaPermission',
-      constraints: constraints,
-      promiseId: mediaPromiseId,
-    }, '*');
-
-    return promise;
-  }
-
-  let originalGetUserMedia = realOriginalGetUserMedia;
-
-  function interceptGetUserMedia() {
-    if (navigator.mediaDevices) {
-      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
-        value: function(constraints) {
-          return requestMediaPermissions(constraints).then((granted) => {
-            if (granted) {
-              if (originalGetUserMedia) {
-                return originalGetUserMedia(constraints);
-              } else {
-                throw new Error("Original getUserMedia not available.");
-              }
-            } else {
-              throw new DOMException('Permission denied', 'NotAllowedError');
-            }
-          });
-        },
-        writable: false,
-        configurable: false
-      });
-    }
-  }
-
-  interceptGetUserMedia();
-
-  const observer = new MutationObserver(function(mutationsList, observer) {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
-        interceptGetUserMedia();
-      } else if (mutation.type === 'childList' && mutation.addedNodes) {
-        mutation.addedNodes.forEach(node => {
-          if (node === navigator.mediaDevices) {
-            interceptGetUserMedia();
-          }
-        });
-      }
-    }
-  });
-
-  function interceptSpeechRecognition() {
-    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
-      return;
-    }
-
-    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    const SpeechRecognitionWrapper = function(...args) {
-      const recognizer = new OriginalSpeechRecognition(...args);
-      const originalStart = recognizer.start.bind(recognizer);
-
-      recognizer.start = function() {
-        requestMediaPermissions({ audio: true }).then(granted => {
-          if (granted) {
-            originalStart();
-          } else {
-            const errorEvent = new SpeechRecognitionErrorEvent('error');
-            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
-            recognizer.dispatchEvent(errorEvent);
-          }
-        });
-      };
-
-      return recognizer;
-    };
-
-    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
-    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
-
-    if (window.SpeechRecognition) {
-      window.SpeechRecognition = SpeechRecognitionWrapper;
-    }
-    if (window.webkitSpeechRecognition) {
-      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
-    }
-  }
-
-  interceptSpeechRecognition();
-
-  window.addEventListener('message', function(event) {
-    if (event.data) {
-      if (event.data.type === 'resolveMediaPermission') {
-        const { promiseId, granted } = event.data;
-        if (pendingMediaResolvers[promiseId]) {
-          pendingMediaResolvers[promiseId](granted);
-        }
-      }
-    }
-  });
-
-})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}" data-bard-client-injected="true">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
-function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-function A(b,d){function e(){}e.prototype=d.prototype;b.j=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.h=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
-let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
-null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.i="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
-c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
-"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
-Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
-(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
-url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
-</script><script data-bard-client-injected="true">((function(modelInformation) {
-  const originalFetch = window.fetch;
-  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
-  let googleLlmBaseApiUrls = [
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
-    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
-  ];
-  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-    );
-  });
-  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-  modelInformation.deprecatedImageTransformModelNames.forEach((modelName) => {
-    googleLlmBaseApiUrls.push(
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
-      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
-    );
-  });
-
-  const pendingFetchResolvers = {};
-  let nextPromiseId = 0;
-
-  function handleStringInput(input, optionsArgument) {
-    const actualUrl = input;
-    const fetchCallArgs = [actualUrl, optionsArgument];
-    const effectiveOptions = optionsArgument || {};
-    const bodyForApiKeyCheck = effectiveOptions.body;
-    const bodyForPostMessage = effectiveOptions.body;
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  function handleRequestInput(input, optionsArgument) {
-    const actualUrl = input.url;
-    const fetchCallArgs = [input, optionsArgument];
-    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (optionsArgument) {
-      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
-      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
-      if ('body' in optionsArgument) {
-        bodyForApiKeyCheck = optionsArgument.body;
-        bodyForPostMessage = optionsArgument.body;
-      } else {
-        bodyForApiKeyCheck = undefined;
-        bodyForPostMessage = input.body;
-      }
-    } else {
-      bodyForApiKeyCheck = undefined;
-      bodyForPostMessage = input.body;
-    }
-    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
-  }
-
-  window.fetch = function(input, optionsArgument) {
-    let actualUrl;
-    let fetchCallArgs;
-    let effectiveOptions = {};
-    let bodyForApiKeyCheck;
-    let bodyForPostMessage;
-
-    if (typeof input === 'string') {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
-    } else if (input instanceof Request) {
-      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
-    } else {
-      return originalFetch.apply(window, [input, optionsArgument]);
-    }
-
-    effectiveOptions.method = effectiveOptions.method || 'GET';
-    if (!effectiveOptions.headers) {
-      effectiveOptions.headers = new Headers();
-    }
-
-
-    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
-      let apiKeyIsNull = true;
-
-      const regex = new RegExp("models/([^:]+)");
-      const modelNameMatch = actualUrl.match(regex);
-      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
-
-
+    function detectPlatform(value) {
       try {
-        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
-        const apiKeyParam = urlObject.searchParams.get('key');
-        if (apiKeyParam) {
-          apiKeyIsNull = false;
-        }
-      } catch (e) {
-        // Continue checks even if URL parsing fails
-      }
-
-      if (apiKeyIsNull && effectiveOptions.headers) {
-        const h = new Headers(effectiveOptions.headers);
-        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
-        if (apiKeyHeaderValue) {
-          apiKeyIsNull = false;
-          return originalFetch.apply(window, fetchCallArgs);
-        }
-      }
-
-      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
-        try {
-          const bodyData = JSON.parse(bodyForApiKeyCheck);
-          if (bodyData && bodyData.apiKey) {
-            apiKeyIsNull = false;
-            return originalFetch.apply(window, fetchCallArgs);
-          }
-        } catch (e) {
-          // Ignore JSON parsing errors
-        }
-      }
-
-      if(apiKeyIsNull) {
-        const promiseId = nextPromiseId++;
-        const promise = new Promise((resolve) => {
-          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
-            delete pendingFetchResolvers[promiseId];
-            resolve(resolvedResponse);
-          };
-        });
-
-        let serializedBodyForPostMessage;
-        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
-            serializedBodyForPostMessage = bodyForPostMessage;
-        } else if (bodyForPostMessage instanceof ReadableStream) {
-            serializedBodyForPostMessage = null;
-        } else {
-            try {
-                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
-            } catch (e) {
-                serializedBodyForPostMessage = null;
-            }
-        }
-
-        const messageOptions = {
-            method: effectiveOptions.method,
-            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
-            body: serializedBodyForPostMessage
-        };
-
-        window.parent.postMessage({
-          type: 'requestFetch',
-          url: actualUrl,
-          modelName: modelName,
-          options: messageOptions,
-          promiseId: promiseId,
-        }, '*');
-
-        return promise;
-      }
-      return originalFetch.apply(window, fetchCallArgs);
-    }
-    return originalFetch.apply(window, fetchCallArgs);
-  };
-
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'resolveFetch') {
-      const { promiseId, response } = event.data;
-      if (pendingFetchResolvers[promiseId]) {
-        try {
-          const reconstructedResponse = new Response(response.body, {
-            status: response.status,
-            statusText: response.statusText,
-            headers: new Headers(response.headers),
-          });
-          pendingFetchResolvers[promiseId](reconstructedResponse);
-        } catch (error) {
-          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
-        }
-      }
-    }
-  });
-
-}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image","imageTransformModelName":"gemini-3-pro-image","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image","gemini-3.1-flash-image-preview"],"deprecatedImageTransformModelNames":["gemini-3-pro-image-preview-11-2025"]})</script><script data-bard-client-injected="true">(function() {
-  function normalizeSlug(str) {
-    try {
-      return str
-        .trim()
-        .toLowerCase()
-        .replace(/[^p{L}p{N}s_-]/gu, '')
-        .replace(/s+/g, '-');
-    } catch (e) {
-      return str
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9s_-]/g, '')
-        .replace(/s+/g, '-');
-    }
-  }
-
-  function findTargetElement(hash) {
-    if (!hash || hash === '#') {
+        const host = new URL(value).hostname.toLowerCase().replace(/^www\./, '');
+        if (host === 'instagram.com' || host.endsWith('.instagram.com')) return 'Instagram';
+        if (host === 'tiktok.com' || host.endsWith('.tiktok.com')) return 'TikTok';
+        if (host === 'youtube.com' || host.endsWith('.youtube.com') || host === 'youtu.be') return 'YouTube';
+        if (host === 'facebook.com' || host.endsWith('.facebook.com') || host === 'fb.watch') return 'Facebook';
+      } catch (_) {}
       return null;
     }
-    const rawId = hash.startsWith('#') ? hash.slice(1) : hash;
-    let decodedId = rawId;
-    try {
-      decodedId = decodeURIComponent(rawId);
-    } catch (e) {
-      // Ignore URI malformed errors.
+    function selectPlatform(name) {
+      selectedPlatform = name;
+      document.querySelectorAll('.platform').forEach(btn => btn.classList.toggle('active', btn.dataset.platform === name));
     }
+    document.querySelectorAll('.platform').forEach(btn => btn.addEventListener('click', () => selectPlatform(btn.dataset.platform)));
 
-    // 1. Direct ID match (raw and decoded).
-    let target = document.getElementById(rawId) || document.getElementById(decodedId);
-    if (target) {
-      return target;
-    }
+    urlInput.addEventListener('input', () => {
+      const found = detectPlatform(urlInput.value.trim());
+      $('#detectedLabel').textContent = found ? 'Detected: ' + found : 'No platform detected';
+      if (found) selectPlatform(found);
+    });
 
-    // 2. Name attribute match (<a name="...">).
-    try {
-      if (typeof CSS !== 'undefined' && CSS.escape) {
-        target =
-          document.querySelector('[name="' + CSS.escape(rawId) + '"]') ||
-          document.querySelector('[name="' + CSS.escape(decodedId) + '"]');
-      } else {
-        const namedElements = document.getElementsByName(rawId);
-        if (namedElements && namedElements.length > 0) {
-          return namedElements[0];
-        }
+    $('#pasteBtn').addEventListener('click', async () => {
+      try {
+        const value = await navigator.clipboard.readText();
+        if (!value) return showStatus('Your clipboard is empty. Copy a video link first.', 'error');
+        urlInput.value = value.trim();
+        urlInput.dispatchEvent(new Event('input'));
+        showStatus('Link pasted. Check the URL, then continue.');
+      } catch (_) {
+        showStatus('Clipboard access is unavailable. Please paste the link into the field manually.', 'error');
       }
-    } catch (e) {
-      // Ignore querySelector syntax errors.
-    }
-    if (target) {
-      return target;
-    }
+    });
 
-    // 3. Match heading text by slug (for Markdown TOCs where headings lack explicit IDs).
-    const targetSlug = normalizeSlug(decodedId);
-    if (targetSlug) {
-      for (const heading of document.querySelectorAll('h1, h2, h3, h4, h5, h6')) {
-        if (normalizeSlug(heading.textContent || '') === targetSlug) {
-          return heading;
-        }
-      }
-    }
+    $('#fetchBtn').addEventListener('click', () => {
+      const value = urlInput.value.trim();
+      if (!value) return showStatus('Please paste a video URL first.', 'error');
+      let parsed;
+      try { parsed = new URL(value); } catch (_) { return showStatus('Please enter a valid URL beginning with https://', 'error'); }
+      if (parsed.protocol !== 'https:') return showStatus('For safety, only HTTPS links are accepted.', 'error');
+      const found = detectPlatform(value);
+      if (!found) return showStatus('This URL is not from one of the supported platforms.', 'error');
+      if (found !== selectedPlatform) selectPlatform(found);
+      showStatus('URL validated for ' + found + '. The interface is ready, but actual media retrieval needs a secure, compliant backend/API integration. No fake download has been started.');
+    });
 
-    return null;
-  }
-
-  document.addEventListener('click', function(event) {
-    const target = event.target;
-    const anchor = target && typeof target.closest === 'function' ? target.closest('a') : null;
-    if (!anchor) {
-      return;
-    }
-
-    const href = anchor.getAttribute('href');
-    if (
-      !href ||
-      href.trim().toLowerCase().startsWith('javascript:') ||
-      anchor.hasAttribute('download')
-    ) {
-      return;
-    }
-
-    // Check if the link is an in-page hash / anchor link.
-    if (href.startsWith('#')) {
-      event.preventDefault();
-      const targetElement = findTargetElement(href);
-      if (targetElement) {
-        targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-      }
-      return;
-    }
-
-    // Check if the URL has the same origin/pathname but with a hash.
-    try {
-      const url = new URL(anchor.href, window.location.href);
-      if (
-        url.hash &&
-        url.origin === window.location.origin &&
-        url.pathname === window.location.pathname
-      ) {
-        event.preventDefault();
-        const targetElement = findTargetElement(url.hash);
-        if (targetElement) {
-          targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-        return;
-      }
-    } catch (e) {
-      // Fall through if URL parsing fails.
-    }
-
-    // For all external or full navigation links, prevent iframe-level navigation
-    // (which breaks in AGSA WebView or sandboxed iframes) and ensure they open
-    // safely in a new tab/window.
-    if (anchor.target !== '_blank') {
-      event.preventDefault();
-      window.open(anchor.href, '_blank', 'noopener,noreferrer');
-    }
-  }, {capture: true});
-})();</script><script data-bard-client-injected="true">(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
-</script><script data-bard-client-injected="true">(function() {
-  const originalConsoleLog = console.log;
-  const originalConsoleError = console.error;
-
-    /**
-   * Normalizes an error event or a promise rejection reason into a structured error object.
-   * @param {*} errorEventOrReason The error object or reason.
-   * @return {object} Structured error data { message, name, stack }.
-   */
-  function getErrorObject(errorEventOrReason) {
-    if (errorEventOrReason instanceof Error) {
-      return {
-        message: errorEventOrReason.message,
-        name: errorEventOrReason.name,
-        stack: errorEventOrReason.stack,
-      };
-    }
-    // Fallback for non-Error objects.
-    try {
-      return {
-        message: JSON.stringify(errorEventOrReason),
-        name: 'UnknownErrorType',
-        stack: null,
-      };
-    } catch (e) {
-      return {
-        message: String(errorEventOrReason),
-        name: 'UnknownErrorTypeNonStringifiable',
-        stack: null,
-      };
-    }
-  }
-
-  /**
-   * Converts an array of arguments (from log/error) into a single string.
-   * Handles Error objects specially to include their message and stack.
-   * @param {Array<*>} args - Arguments passed to console methods.
-   * @return {string} A string representation of the arguments.
-   */
-  function stringifyArgs(args) {
-    return args
-      .map((arg) => {
-        if (arg instanceof Error) {
-          const {message, stack} = arg;
-          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
-        }
-        if (typeof arg === 'object' && arg !== null) {
-          try {
-            return JSON.stringify(arg);
-          } catch (error) {
-            return '[Circular Object]';
-          }
-        } else {
-          return String(arg);
-        }
-      })
-      .join(' ');
-  }
-
-  console.log = function(...args) {
-    const logString = stringifyArgs(args);
-    window.parent.postMessage({ type: 'log', message: logString }, '*');
-    originalConsoleLog.apply(console, args);
-  };
-
-  console.error = function(...args) {
-    let errorData;
-    if (args.length > 0 && args[0] instanceof Error) {
-      const err = args[0];
-      // If the first arg is an Error, capture its details.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        ...getErrorObject(err),
-        rawArgsString: stringifyArgs(args.slice(1)),
-        timestamp: new Date().toISOString(),
-      };
-    } else {
-      // If not an Error object, treat all args as a general error message.
-      errorData = {
-        type: 'error',
-        source: 'CONSOLE_ERROR',
-        message: stringifyArgs(args),
-        name: 'ConsoleLoggedError',
-        stack: null,
-        timestamp: new Date().toISOString(),
-      };
-    }
-    window.parent.postMessage(errorData, '*');
-    originalConsoleError.apply(console, args);
-  };
-
-  // Listen for global unhandled synchronous errors.
-  window.addEventListener('error', function(event) {
-    const errorDetails = event.error ? getErrorObject(event.error) : {
-      message: event.message,
-      name: 'GlobalError',
-      stack: null,
-      filename: event.filename,
-      lineno: event.lineno,
-      colno: event.colno,
+    // Footer information modals
+    const modalContent = {
+      about: ['About MediaFetch.Pro', '<p>MediaFetch.Pro is a simple interface concept for organizing public-media link workflows. Our goal is to make the experience clear, accessible, and easy to use.</p>'],
+      privacy: ['Privacy Policy', '<p>This standalone frontend does not transmit or save the URL you enter. Theme preference is stored locally in your browser. If a backend is added later, its data collection, retention, and contact details must be disclosed here before launch.</p>'],
+      terms: ['Terms of Use', '<p>Use this service only for content you own or have permission to download. Respect copyright, platform terms, privacy, and applicable laws. Do not attempt to access private, restricted, or protected content. Availability of any future download feature will depend on a compliant backend integration.</p>']
     };
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'global',
-      ...errorDetails,
-      message: errorDetails.message || event.message,
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-  // Listen for unhandled promise rejections (asynchronous errors).
-  window.addEventListener('unhandledrejection', function(event) {
-    const errorDetails = getErrorObject(event.reason);
-
-    window.parent.postMessage({
-      type: 'error',
-      source: 'unhandledrejection',
-      ...errorDetails,
-      message: errorDetails.message || 'Unhandled Promise Rejection',
-      timestamp: new Date().toISOString(),
-    }, '*');
-  });
-
-})();</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaFetch Pro - Free HD Video &amp; Reels Downloader</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#2563EB',
-                            blueDark: '#1D4ED8',
-                            emerald: '#059669',
-                            emeraldDark: '#047857',
-                            amber: '#D97706',
-                        },
-                        surface: {
-                            light: '#F8FAFC',
-                            cardLight: '#FFFFFF',
-                            dark: '#0F172A',
-                            cardDark: '#1E293B',
-                            borderDark: '#334155'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* AdSense Slot Visual Styling */
-        .adsense-placeholder {
-            border: 2px dashed #94A3B8;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dark .adsense-placeholder {
-            border-color: #475569;
-            background-color: #1E293B;
-        }
-
-        .adsense-placeholder::before {
-            content: "ADSENSE ADVERTISEMENT SLOT";
-            position: absolute;
-            top: 6px;
-            left: 10px;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #64748B;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #CBD5E1;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-    </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-2{bottom:0.5rem}.right-2{right:0.5rem}.right-3{right:0.75rem}.top-0{top:0px}.top-24{top:6rem}.top-3{top:0.75rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-1{margin-left:0.25rem;margin-right:0.25rem}.mx-auto{margin-left:auto;margin-right:auto}.-mt-1{margin-top:-0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.mr-1{margin-right:0.25rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-2\.5{height:0.625rem}.h-36{height:9rem}.h-56{height:14rem}.h-7{height:1.75rem}.h-\[600px\]{height:600px}.h-full{height:100%}.max-h-80{max-height:20rem}.min-h-\[120px\]{min-height:120px}.min-h-\[250px\]{min-height:250px}.min-h-\[90px\]{min-height:90px}.min-h-screen{min-height:100vh}.w-0{width:0px}.w-10{width:2.5rem}.w-12{width:3rem}.w-7{width:1.75rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-\[180px\]{max-width:180px}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.shrink-0{flex-shrink:0}.flex-grow{flex-grow:1}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-amber-100{--tw-border-opacity:1;border-color:rgb(254 243 199 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity:1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-red-200{--tw-border-opacity:1;border-color:rgb(254 202 202 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-t-blue-600{--tw-border-opacity:1;border-top-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/20{background-color:rgb(15 23 42 / 0.2)}.bg-slate-900\/70{background-color:rgb(15 23 42 / 0.7)}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-3{padding-bottom:0.75rem}.pl-1{padding-left:0.25rem}.pl-3{padding-left:0.75rem}.pr-1{padding-right:0.25rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-pink-600{--tw-text-opacity:1;color:rgb(219 39 119 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-slate-400::placeholder{--tw-placeholder-opacity:1;color:rgb(148 163 184 / var(--tw-placeholder-opacity, 1))}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.focus-within\:border-blue-600:focus-within{--tw-border-opacity:1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-700:hover{--tw-bg-opacity:1;background-color:rgb(4 120 87 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-900:hover{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.hover\:text-blue-600:hover{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.hover\:text-slate-700:hover{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.hover\:text-slate-900:hover{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.dark\:border-amber-900:is(.dark *){--tw-border-opacity:1;border-color:rgb(120 53 15 / var(--tw-border-opacity, 1))}.dark\:border-blue-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 64 175 / var(--tw-border-opacity, 1))}.dark\:border-blue-900:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.dark\:border-emerald-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(6 95 70 / var(--tw-border-opacity, 1))}.dark\:border-emerald-900:is(.dark *){--tw-border-opacity:1;border-color:rgb(6 78 59 / var(--tw-border-opacity, 1))}.dark\:border-red-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(153 27 27 / var(--tw-border-opacity, 1))}.dark\:border-slate-600:is(.dark *){--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.dark\:border-slate-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.dark\:border-slate-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.dark\:bg-amber-950\/60:is(.dark *){background-color:rgb(69 26 3 / 0.6)}.dark\:bg-blue-950\/60:is(.dark *){background-color:rgb(23 37 84 / 0.6)}.dark\:bg-emerald-950\/60:is(.dark *){background-color:rgb(2 44 34 / 0.6)}.dark\:bg-red-950\/50:is(.dark *){background-color:rgb(69 10 10 / 0.5)}.dark\:bg-slate-700:is(.dark *){--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800\/80:is(.dark *){background-color:rgb(30 41 59 / 0.8)}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-950:is(.dark *){--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.dark\:text-amber-400:is(.dark *){--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.dark\:text-blue-400:is(.dark *){--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.dark\:text-blue-500:is(.dark *){--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.dark\:text-emerald-400:is(.dark *){--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.dark\:text-red-400:is(.dark *){--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.dark\:text-slate-100:is(.dark *){--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:text-slate-200:is(.dark *){--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.dark\:text-slate-300:is(.dark *){--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:text-slate-500:is(.dark *){--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.dark\:text-slate-600:is(.dark *){--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.dark\:text-white:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:placeholder-slate-500:is(.dark *)::placeholder{--tw-placeholder-opacity:1;color:rgb(100 116 139 / var(--tw-placeholder-opacity, 1))}.dark\:focus-within\:border-blue-500:focus-within:is(.dark *){--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.dark\:hover\:bg-slate-600:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-slate-700:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-blue-400:hover:is(.dark *){--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.dark\:hover\:text-white:hover:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:w-48{width:12rem}.sm\:w-auto{width:auto}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:gap-3{gap:0.75rem}.sm\:p-10{padding:2.5rem}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:flex{display:flex}}@media (min-width: 1024px){.lg\:w-1\/4{width:25%}.lg\:w-3\/4{width:75%}.lg\:flex-row{flex-direction:row}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between antialiased">
-
-    <!-- TOP HEADER / NAVBAR -->
-    <header class="sticky top-0 z-40 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <div class="flex items-center gap-3 cursor-pointer" onclick="resetDownloader()">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-xl shadow-md">
-                    <i class="fa-solid fa-bolt text-lg"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                        MediaFetch<span class="text-blue-600 dark:text-blue-500">.Pro</span>
-                    </span>
-                    <span class="text-[10px] tracking-wider text-slate-500 dark:text-slate-400 font-semibold uppercase -mt-1">Social Media Downloader</span>
-                </div>
-            </div>
-
-            <!-- Header Actions: Theme Toggle + Code Modal Button -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <!-- Theme Toggle Button -->
-                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition flex items-center gap-1.5 text-xs font-semibold" title="Toggle Theme">
-                    <i id="themeIcon" class="fa-solid fa-moon text-sm text-blue-600 dark:text-amber-400"></i>
-                    <span id="themeLabel" class="hidden sm:inline">Dark</span>
-                </button>
-
-                <!-- Copy Source Code Button -->
-                <button onclick="openCodeModal()" class="px-3 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 rounded-xl transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-code text-blue-600 dark:text-blue-400"></i>
-                    <span class="hidden sm:inline">Copy Code</span>
-                </button>
-
-                <a href="#downloader" class="hidden md:flex px-4 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition shadow-sm">
-                    Start Downloader
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- TOP LEADERBOARD ADSPACE (728x90) -->
-    <div class="w-full max-w-5xl mx-auto px-4 mt-6">
-        <div class="adsense-placeholder bg-slate-100 dark:bg-slate-900 min-h-[90px] rounded-2xl flex items-center justify-center p-2 text-center text-xs text-slate-500 dark:text-slate-400">
-            <div class="flex flex-col items-center gap-1">
-                <i class="fa-solid fa-rectangle-ad text-slate-400 dark:text-slate-600 text-xl"></i>
-                <span>Header Leaderboard Ad (728x90 / 320x100 Responsive)</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- MAIN CONTAINER -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
-        
-        <!-- LEFT / MAIN CONTENT AREA -->
-        <div id="downloader" class="flex-grow w-full lg:w-3/4 flex flex-col gap-6">
-            
-            <!-- HERO & CONVERTER CARD -->
-            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-sm relative transition-colors">
-
-                <div class="relative z-10 text-center max-w-2xl mx-auto mb-8">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-4">
-                        <i class="fa-solid fa-circle-check"></i> Watermark-Free HD Downloads
-                    </div>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3 leading-tight">
-                        Download Reels &amp; Videos <span class="text-blue-600 dark:text-blue-500">Instantly</span>
-                    </h1>
-                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                        Convert and save MP4/MP3 media from Instagram, TikTok, YouTube Shorts &amp; Pinterest in seconds.
-                    </p>
-                </div>
-
-                <!-- SUPPORTED PLATFORM BADGES -->
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
-                    <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5">
-                        <i class="fa-brands fa-instagram text-pink-600 text-sm"></i> Instagram Reels
-                    </span>
-                    <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5">
-                        <i class="fa-brands fa-tiktok text-slate-900 dark:text-white text-sm"></i> TikTok (No WM)
-                    </span>
-                    <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5">
-                        <i class="fa-brands fa-youtube text-red-600 text-sm"></i> YouTube Shorts
-                    </span>
-                    <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold flex items-center gap-1.5">
-                        <i class="fa-brands fa-pinterest text-red-600 text-sm"></i> Pinterest Video
-                    </span>
-                </div>
-
-                <!-- URL INPUT FORM -->
-                <div class="relative max-w-2xl mx-auto">
-                    <div class="flex flex-col sm:flex-row items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-2xl focus-within:border-blue-600 dark:focus-within:border-blue-500 transition-all">
-                        <div class="flex items-center pl-3 w-full sm:w-auto flex-grow gap-2">
-                            <i class="fa-solid fa-link text-slate-400 dark:text-slate-500 text-base pl-1"></i>
-                            <input type="url" id="videoUrlInput" placeholder="Paste Instagram, TikTok or Video link here..." class="w-full bg-transparent text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none py-3" autocomplete="off">
-                            <button type="button" onclick="pasteClipboard()" title="Paste from Clipboard" class="px-3 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl transition flex items-center gap-1 shrink-0 shadow-sm">
-                                <i class="fa-regular fa-clipboard"></i> Paste
-                            </button>
-                        </div>
-                        <button type="button" id="fetchBtn" onclick="processDownload()" class="w-full sm:w-auto px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl transition shadow-md flex items-center justify-center gap-2 shrink-0">
-                            <span>Fetch Media</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ALERT NOTIFICATION BOX -->
-                <div id="alertBox" class="hidden max-w-2xl mx-auto mt-4 p-3 rounded-xl bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-xs flex items-center gap-2">
-                    <i class="fa-solid fa-triangle-exclamation text-sm"></i>
-                    <span id="alertMessage">Please enter a valid video link to proceed.</span>
-                </div>
-
-                <!-- SAMPLE DEMO LINKS -->
-                <div class="mt-4 text-center">
-                    <span class="text-xs text-slate-500 dark:text-slate-400">Try sample link: </span>
-                    <button onclick="fillSample('https://www.instagram.com/reel/C5x9k1yL_Sample/')" class="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold ml-1">Instagram Reel</button>
-                    <span class="text-slate-400 dark:text-slate-600 mx-1">•</span>
-                    <button onclick="fillSample('https://www.tiktok.com/@user/video/7351000000')" class="text-xs text-blue-600 dark:text-blue-400 hover:underline font-semibold">TikTok Video</button>
-                </div>
-            </div>
-
-            <!-- DYNAMIC PROCESSING & ADVERTISEMENT SECTION -->
-            <div id="processingSection" class="hidden flex-col gap-4">
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 text-center border border-blue-200 dark:border-blue-900 shadow-sm">
-                    <div class="flex flex-col items-center justify-center gap-3">
-                        <div class="w-12 h-12 rounded-full border-4 border-slate-200 dark:border-slate-800 border-t-blue-600 animate-spin"></div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Preparing HD Media File...</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Parsing video links and rendering quality (<span id="timerCountdown" class="text-blue-600 dark:text-blue-400 font-bold">3</span>s)</p>
-                        
-                        <div class="w-full max-w-md bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden mt-2 border border-slate-200 dark:border-slate-700">
-                            <div id="progressBar" class="bg-blue-600 h-full w-0 transition-all duration-300"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HIGH VISIBILITY ADSENSE SLOT DURING WAIT TIMER -->
-                <div class="adsense-placeholder bg-slate-100 dark:bg-slate-900 min-h-[250px] rounded-2xl flex items-center justify-center p-4 text-center">
-                    <div class="flex flex-col items-center gap-2 text-slate-500 dark:text-slate-400">
-                        <i class="fa-solid fa-rectangle-ad text-3xl text-slate-400 dark:text-slate-600"></i>
-                        <span class="text-sm font-semibold">High-CPM AdSense Conversion Banner Slot</span>
-                        <span class="text-xs text-slate-400 dark:text-slate-500">Positioned during wait-timer processing for high impressions &amp; CTR.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DOWNLOAD RESULT CARD -->
-            <div id="downloadResults" class="hidden flex-col gap-6">
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                        
-                        <!-- Thumbnail Preview -->
-                        <div class="relative w-full sm:w-48 h-36 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shrink-0">
-                            <img id="resThumbnail" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Video Preview" class="w-full h-full object-cover">
-                            <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-slate-900/90 text-[10px] font-bold text-white">00:45</span>
-                            <div class="absolute inset-0 bg-slate-900/20 flex items-center justify-center">
-                                <i class="fa-solid fa-circle-play text-white text-3xl"></i>
-                            </div>
-                        </div>
-
-                        <!-- Video Options & Buttons -->
-                        <div class="flex-grow w-full">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-xs font-bold uppercase tracking-wider">
-                                    Ready To Download
-                                </span>
-                                <span class="text-xs text-slate-500 dark:text-slate-400 font-semibold"><i class="fa-solid fa-eye mr-1"></i> 1080p Full HD</span>
-                            </div>
-
-                            <h3 id="resTitle" class="text-base font-bold text-slate-900 dark:text-white line-clamp-2 mb-4">
-                                Viral HD Social Media Reel Video - Clean Watermark Free File
-                            </h3>
-
-                            <!-- High-Contrast Solid Action Buttons -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <button onclick="triggerFileDownload('1080p MP4')" class="px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 shadow-sm">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>Download HD (MP4)</span>
-                                </button>
-                                <button onclick="triggerFileDownload('720p MP4')" class="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>SD File (MP4)</span>
-                                </button>
-                                <button onclick="triggerFileDownload('MP3 Audio')" class="px-4 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-music"></i>
-                                    <span>Audio Only (MP3)</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MID CONTENT ADSPACE -->
-                <div class="adsense-placeholder bg-slate-100 dark:bg-slate-900 min-h-[120px] rounded-2xl flex items-center justify-center p-4 text-center">
-                    <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">In-Feed Native Ad Slot (AdSense Ready)</span>
-                </div>
-            </div>
-
-            <!-- FEATURES LIST -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-start gap-3 transition-colors">
-                    <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">Ultra Fast Speed</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400">Parse and convert video links in under 3 seconds with maximum bandwidth.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-start gap-3 transition-colors">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-100 dark:border-emerald-900 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-lg">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">No Watermark</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400">Clean video downloads without unwanted logos or watermarks.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-start gap-3 transition-colors">
-                    <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-100 dark:border-amber-900 flex items-center justify-center text-amber-600 dark:text-amber-400 text-lg">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">Cross-Platform</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400">Fully responsive UI compatible with iOS, Android, macOS, and Windows.</p>
-                </div>
-            </div>
-
-            <!-- SEO ARTICLE SECTION FOR ADSENSE APPROVAL -->
-            <div id="seoArticle" class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm mt-2 space-y-4 transition-colors">
-                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="fa-solid fa-circle-question text-blue-600 dark:text-blue-400"></i>
-                    How to Save Videos with MediaFetch Pro?
-                </h2>
-                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    MediaFetch Pro offers a simple online web utility to download high-resolution videos, Reels, and Shorts. Paste your video link into the search box, click Fetch, and save watermark-free files directly to your local device storage.
-                </p>
-            </div>
-
-        </div>
-
-        <!-- RIGHT SIDEBAR (STICKY DESKTOP ADSENSE SLOT) -->
-        <aside class="w-full lg:w-1/4 flex flex-col gap-6">
-            <div class="adsense-placeholder bg-slate-100 dark:bg-slate-900 h-[600px] w-full rounded-2xl flex flex-col items-center justify-center p-4 text-center sticky top-24">
-                <i class="fa-solid fa-rectangle-ad text-4xl text-slate-400 dark:text-slate-600 mb-2"></i>
-                <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">Sticky Desktop Ad (300x600 Half-Page)</span>
-                <span class="text-[10px] text-slate-400 dark:text-slate-500 mt-2 max-w-[180px]">High visibility placement maximizing ad revenue and dwell time.</span>
-            </div>
-        </aside>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-12 py-8 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xs">M</div>
-                <span class="text-sm font-bold text-slate-800 dark:text-slate-200">MediaFetch Pro © 2026</span>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 dark:text-slate-400 font-medium">
-                <button onclick="openInfoModal('about')" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About Us</button>
-                <button onclick="openInfoModal('privacy')" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</button>
-                <button onclick="openInfoModal('terms')" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Terms of Use</button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SOURCE CODE COPY MODAL -->
-    <div id="codeModal" class="hidden fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full p-6 border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col gap-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-code text-blue-600 text-lg"></i>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white">Full Source Code</h3>
-                </div>
-                <button onclick="closeCodeModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Copy the full single-file code for MediaFetch Pro to deploy directly on Vercel, Netlify, or custom hosting.</p>
-
-            <div class="relative">
-                <textarea id="sourceCodeArea" readonly="" class="w-full h-56 bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs font-mono text-slate-200 focus:outline-none resize-none"></textarea>
-                <button onclick="copySourceCodeText()" class="absolute top-3 right-3 px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
-                    <i class="fa-regular fa-copy"></i>
-                    <span id="copyBtnText">Copy Code</span>
-                </button>
-            </div>
-
-            <div class="flex justify-end">
-                <button onclick="closeCodeModal()" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-xl border border-slate-300 dark:border-slate-700">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- LEGAL / INFO MODAL (ABOUT, PRIVACY, TERMS) -->
-    <div id="infoModal" class="hidden fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-xl w-full p-6 border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col gap-4">
-            <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
-                <h3 id="infoModalTitle" class="text-base font-bold text-slate-900 dark:text-white">Information</h3>
-                <button onclick="closeInfoModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div id="infoModalBody" class="text-xs text-slate-600 dark:text-slate-400 space-y-3 max-h-80 overflow-y-auto pr-1 leading-relaxed">
-                <!-- Content injected dynamically -->
-            </div>
-
-            <div class="flex justify-end border-t border-slate-200 dark:border-slate-800 pt-3">
-                <button onclick="closeInfoModal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl">
-                    Understand &amp; Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // DOM Elements
-        const videoUrlInput = document.getElementById('videoUrlInput');
-        const alertBox = document.getElementById('alertBox');
-        const alertMessage = document.getElementById('alertMessage');
-        const processingSection = document.getElementById('processingSection');
-        const downloadResults = document.getElementById('downloadResults');
-        const timerCountdown = document.getElementById('timerCountdown');
-        const progressBar = document.getElementById('progressBar');
-
-        // Dark/Light Theme Switcher Logic
-        function toggleTheme() {
-            const html = document.documentElement;
-            const themeIcon = document.getElementById('themeIcon');
-            const themeLabel = document.getElementById('themeLabel');
-
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                html.classList.add('light');
-                themeIcon.className = 'fa-solid fa-moon text-sm text-blue-600';
-                themeLabel.innerText = 'Dark';
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.remove('light');
-                html.classList.add('dark');
-                themeIcon.className = 'fa-solid fa-sun text-sm text-amber-400';
-                themeLabel.innerText = 'Light';
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Initialize Theme from localStorage
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.getElementById('themeIcon').className = 'fa-solid fa-sun text-sm text-amber-400';
-            document.getElementById('themeLabel').innerText = 'Light';
-        }
-
-        async function pasteClipboard() {
-            try {
-                const text = await navigator.clipboard.readText();
-                if(text) {
-                    videoUrlInput.value = text;
-                    hideAlert();
-                }
-            } catch (err) {
-                showAlert("Clipboard access denied. Please paste your video URL manually.");
-            }
-        }
-
-        function fillSample(url) {
-            videoUrlInput.value = url;
-            hideAlert();
-        }
-
-        function showAlert(msg) {
-            alertMessage.innerText = msg;
-            alertBox.classList.remove('hidden');
-        }
-
-        function hideAlert() {
-            alertBox.classList.add('hidden');
-        }
-
-        function processDownload() {
-            const url = videoUrlInput.value.trim();
-            if (!url) {
-                showAlert("Please enter a valid video or reel link first!");
-                return;
-            }
-
-            hideAlert();
-            downloadResults.classList.add('hidden');
-            processingSection.classList.remove('hidden');
-            processingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            let timeLeft = 3;
-            timerCountdown.innerText = timeLeft;
-            progressBar.style.width = '0%';
-
-            setTimeout(() => { progressBar.style.width = '33%'; }, 300);
-            setTimeout(() => { progressBar.style.width = '66%'; }, 1500);
-            setTimeout(() => { progressBar.style.width = '100%'; }, 2700);
-
-            const interval = setInterval(() => {
-                timeLeft--;
-                if (timeLeft > 0) {
-                    timerCountdown.innerText = timeLeft;
-                } else {
-                    clearInterval(interval);
-                    processingSection.classList.add('hidden');
-                    showResults();
-                }
-            }, 1000);
-        }
-
-        function showResults() {
-            downloadResults.classList.remove('hidden');
-            downloadResults.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function triggerFileDownload(format) {
-            const dummyModal = document.createElement('div');
-            dummyModal.className = "fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center p-4";
-            dummyModal.innerHTML = `
-                <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl max-w-sm w-full text-center border border-slate-200 dark:border-slate-800 shadow-2xl">
-                    <div class="w-12 h-12 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-xl mx-auto mb-3">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1">Downloading ${format}</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Your media file is now saving directly to your local device storage.</p>
-                    <button onclick="this.closest('.fixed').remove()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold text-xs rounded-xl transition">
-                        Done
-                    </button>
-                </div>
-            `;
-            document.body.appendChild(dummyModal);
-        }
-
-        function resetDownloader() {
-            videoUrlInput.value = '';
-            hideAlert();
-            processingSection.classList.add('hidden');
-            downloadResults.classList.add('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Code Copy Modal
-        function openCodeModal() {
-            document.getElementById('sourceCodeArea').value = document.documentElement.outerHTML;
-            document.getElementById('codeModal').classList.remove('hidden');
-        }
-
-        function closeCodeModal() {
-            document.getElementById('codeModal').classList.add('hidden');
-        }
-
-        function copySourceCodeText() {
-            const codeArea = document.getElementById('sourceCodeArea');
-            codeArea.select();
-            document.execCommand('copy');
-            
-            const btnText = document.getElementById('copyBtnText');
-            btnText.innerText = 'Copied!';
-            setTimeout(() => { btnText.innerText = 'Copy Code'; }, 2000);
-        }
-
-        // Legal & Info Modals (About, Privacy, Terms)
-        function openInfoModal(type) {
-            const modal = document.getElementById('infoModal');
-            const title = document.getElementById('infoModalTitle');
-            const body = document.getElementById('infoModalBody');
-
-            if (type === 'about') {
-                title.innerText = "About MediaFetch Pro";
-                body.innerHTML = `
-                    <p><strong>MediaFetch Pro</strong> is a lightweight, ultra-fast online media downloader built for digital creators, social media managers, and everyday users.</p>
-                    <p>Our platform allows instant parsing and downloading of public video content from popular social networks without watermarks or forced registrations.</p>
-                `;
-            } else if (type === 'privacy') {
-                title.innerText = "Privacy Policy";
-                body.innerHTML = `
-                    <p>We take your privacy seriously. MediaFetch Pro does not record, log, or store your searched video URLs or personal media history on our servers.</p>
-                    <p>Third-party advertising vendors, including Google AdSense, use cookies to serve ads based on prior user visits to this website.</p>
-                `;
-            } else if (type === 'terms') {
-                title.innerText = "Terms of Use";
-                body.innerHTML = `
-                    <p>MediaFetch Pro is intended solely for personal, non-commercial use. Users are responsible for respecting the copyright and intellectual property rights of original content creators.</p>
-                    <p>Do not use this utility to download copyrighted media without appropriate authorization from the content owner.</p>
-                `;
-            }
-
-            modal.classList.remove('hidden');
-        }
-
-        function closeInfoModal() {
-            document.getElementById('infoModal').classList.add('hidden');
-        }
-    </script>
-
-</body></html>
+    const modal = $('#modal');
+    function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+    document.querySelectorAll('.footer-modal').forEach(button => button.addEventListener('click', () => {
+      const [title, body] = modalContent[button.dataset.modal];
+      $('#modalTitle').textContent = title;
+      $('#modalBody').innerHTML = body;
+      modal.classList.remove('hidden'); modal.classList.add('flex');
+      $('#closeModal').focus();
+    }));
+    $('#closeModal').addEventListener('click', closeModal);
+    $('#modalDone').addEventListener('click', closeModal);
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+    $('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
